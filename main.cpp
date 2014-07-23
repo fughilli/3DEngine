@@ -5,6 +5,8 @@
 #include "../Graphics3D/DrawableObject.h"
 #include "../VectorLib/Vector.h"
 #include "objimporter.h"
+#include <cstdio>
+#include <cstdlib>
 
 using namespace std;
 
