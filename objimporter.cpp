@@ -5,6 +5,8 @@
 #include <limits>
 #include <cstdlib>
 
+//#define DEBUG
+
 using namespace std;
 
 static const unsigned long lineBufferSize = 512;
@@ -78,7 +80,9 @@ Triangle3d* OBJImporter::importOBJ(string path, unsigned long& numTris)
 
         sscanf(linebuffer, "%c %lf %lf %lf", &identifierChar, &(verts[i].x), &(verts[i].y), &(verts[i].z));
 
+#if defined(DEBUG)
         cout << verts[i] << endl;
+#endif
     }
 
     file.close();
@@ -100,7 +104,9 @@ Triangle3d* OBJImporter::importOBJ(string path, unsigned long& numTris)
 
         sscanf(linebuffer, "%c %d %d %d", &identifierChar, &vert1i, &vert2i, &vert3i);
 
+#if defined(DEBUG)
         cout << vert1i << ", " << vert2i << ", " << vert3i << endl;
+#endif
 
         ret[i] = {verts[vert1i - 1],verts[vert2i - 1],verts[vert3i - 1]};
     }
