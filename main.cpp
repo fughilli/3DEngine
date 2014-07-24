@@ -7,6 +7,7 @@
 #include "objimporter.h"
 #include <cstdio>
 #include <cstdlib>
+#include "./res/headers/monkey.h"
 
 using namespace std;
 
@@ -21,12 +22,19 @@ Triangle3d triMesh[] =
     {{-50,-50,0}, {0,50,0}, {50,-50,0}}
 };
 
+#define TEST_STATIC
+
 int main(void)
 {
-    //mesh.mesh = triMesh;
+
+#ifdef TEST_STATIC
+    mesh.mesh = (Triangle3d*)(void *)Suzanne_mesh;
+    mesh.numTris = SUZANNE_MESH_SIZE;
+#else
     unsigned long numTris;
-    mesh.mesh = OBJImporter::importOBJ("res/monkey.obj", numTris);
+    mesh.mesh = OBJImporter::importOBJ("res/cube.obj", numTris);
     mesh.numTris = numTris;
+#endif
 
     mesh.scale(200);
 
@@ -44,7 +52,7 @@ int main(void)
 
     char filename[150];
 
-    for(double i = 0; i < TWO_PI; i+=0.1)
+    for(double i = 0; i < TWO_PI; i+=0.5)
     {
         Quaternion rotQuat = Quaternion::fromAxisAngle(Vector3d::k, i);
         Quaternion baseRotQuat = Quaternion::fromAxisAngle(Vector3d::i, PI/2);
@@ -65,7 +73,9 @@ int main(void)
         img.writeToFile(filename);
     }
 
+#ifndef TEST_STATIC
     free(mesh.mesh);
+#endif
 
     return 0;
 }
