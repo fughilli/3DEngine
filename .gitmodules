@@ -1,0 +1,6 @@
+[submodule "VectorLib"]
+	path = VectorLib
+	url = https://github.com/fughilli/VectorLib.git
+[submodule "3DEngineRenderModule"]
+	path = 3DEngineRenderModule
+	url = https://github.com/fughilli/3DEngineRenderModule.git
