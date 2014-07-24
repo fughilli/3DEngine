@@ -1,3 +1,5 @@
+#ifndef ENERGIA
+
 #include <cmath>
 #include <iostream>
 #include "image.h"
@@ -79,3 +81,5 @@ int main(void)
 
     return 0;
 }
+
+#endif

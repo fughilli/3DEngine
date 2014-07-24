@@ -1,3 +1,5 @@
+#ifndef ENERGIA
+
 #include "image.h"
 #include <iostream>
 #include <cstdlib>
@@ -64,3 +66,5 @@ bool Image::readFromFile(const string& filename)
 {
     return false;
 }
+
+#endif

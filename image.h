@@ -1,7 +1,7 @@
 #ifndef IMAGE_H
 #define IMAGE_H
 
-#include <cstdint>
+#include <stdint.h>
 #include <string>
 
 using namespace std;

@@ -1,3 +1,5 @@
+#ifndef ENERGIA
+
 #include "ImageDisplay.h"
 #include <cmath>
 
@@ -26,3 +28,5 @@ void ImageDisplay::clear(const G3D_Color& color)
         for(int j = 0; j < _i->getHeight(); j++)
             _i->setPixel(i, j, p);
 }
+
+#endif

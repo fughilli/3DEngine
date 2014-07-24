@@ -1,3 +1,5 @@
+#ifndef ENERGIA
+
 #include "objimporter.h"
 #include <iostream>
 #include <fstream>
@@ -116,4 +118,4 @@ Triangle3d* OBJImporter::importOBJ(string path, unsigned long& numTris)
     return ret;
 }
 
-
+#endif
