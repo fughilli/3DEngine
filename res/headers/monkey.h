@@ -1,6 +1,6 @@
 #ifndef MONKEY_H
 #define MONKEY_H
-#include "G3DUtilities.h"
+#include "../../3DEngineRenderModule/G3DUtilities.h"
 
 #define SUZANNE_MESH_SIZE 968
 

@@ -2,12 +2,12 @@
 #include <iostream>
 #include "image.h"
 #include "ImageDisplay.h"
-#include "../Graphics3D/DrawableObject.h"
-#include "../VectorLib/Vector.h"
+#include "3DEngineRenderModule/DrawableObject.h"
+#include "VectorLib/Vector.h"
 #include "objimporter.h"
 #include <cstdio>
 #include <cstdlib>
-#include "./res/headers/monkey.h"
+#include "res/headers/monkey.h"
 
 using namespace std;
 

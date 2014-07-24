@@ -1,4 +1,4 @@
-#include "../Graphics3D/DisplayInterface.h"
+#include "3DEngineRenderModule/DisplayInterface.h"
 
 #include "image.h"
 

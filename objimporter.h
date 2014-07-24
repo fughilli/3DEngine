@@ -1,5 +1,5 @@
-#include "../VectorLib/Vector.h"
-#include "../Graphics3D/G3DUtilities.h"
+#include "VectorLib/Vector.h"
+#include "3DEngineRenderModule/G3DUtilities.h"
 #include <string>
 
 class OBJImporter

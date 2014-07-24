@@ -1,6 +1,6 @@
 #ifndef CUBE_H
 #define CUBE_H
-#include "G3DUtilities.h"
+#include "../../3DEngineRenderModule/G3DUtilities.h"
 
 #define CUBE_MESH_SIZE 12
 
