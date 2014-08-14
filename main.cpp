@@ -54,8 +54,13 @@ int main(void)
 
     char filename[150];
 
-    for(double i = 0; i < TWO_PI; i+=0.5)
+    double step = 0.05;
+
+    #pragma omp for firstprivate(mesh, cam) private(filename)
+    for(int iter = 0; iter < (int)(TWO_PI/step); iter++)
     {
+        double i = 0;
+        i = iter*step;
         Quaternion rotQuat = Quaternion::fromAxisAngle(Vector3d::k, i);
         Quaternion baseRotQuat = Quaternion::fromAxisAngle(Vector3d::i, PI/2);
         mesh.setRot(rotQuat * baseRotQuat);
@@ -70,7 +75,7 @@ int main(void)
         mesh.draw(cam, id);
 
 
-        sprintf(filename, "images/imgfile%d.ppm", (int)(i*100));
+        sprintf(filename, "images/imgfile%03d.ppm", iter);
 
         img.writeToFile(filename);
     }
